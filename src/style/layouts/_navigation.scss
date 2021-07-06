@@ -1,0 +1,48 @@
+.nav {
+    padding: 2.4rem;
+
+    &__list {
+
+    }
+
+    &__item {
+        display: flex;
+        padding: 2rem 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--clr-accent);
+            
+        }
+
+        &:before {
+            content: '';
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-right: 2rem;
+            transform: translateY(.6rem);
+            border-radius: 50%;
+        }
+
+        &--mercury::before { background-color: var(--clr-mercury); }
+        &--venus::before { background-color: var(--clr-venus); }
+        &--earth::before { background-color: var(--clr-earth); }
+        &--mars::before { background-color: var(--clr-mars); }
+        &--jupiter::before { background-color: var(--clr-jupiter); }
+        &--saturn::before { background-color: var(--clr-saturn); }
+        &--uranus::before { background-color: var(--clr-uranus); }
+        &--neptune::before { background-color: var(--clr-neptune); }
+
+        &:after {
+            content: '';
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-left: auto;
+            background: url('../svg/icon-chevron.svg') no-repeat center;
+            transform: scale(2.4);
+        }
+    }
+
+    &__btn {
+        letter-spacing: .2rem;
+    }
+}

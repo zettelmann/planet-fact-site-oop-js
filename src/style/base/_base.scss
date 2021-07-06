@@ -1,0 +1,37 @@
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--clr-background);
+    color: var(--clr-font--white);
+}
+
+li {
+    list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+    background-color: inherit;
+    color: var(--clr-font--white);
+    font-family: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+}
