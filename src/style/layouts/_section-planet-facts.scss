@@ -1,0 +1,62 @@
+.section-planet-facts {
+
+}
+
+.planet-facts {
+
+    &__container {
+    }
+
+    
+    &__img {
+        width: 100%;
+        display: grid;
+        place-content: center;
+    }
+    /* CONTENT START */
+    &__content {
+
+    }
+
+        &__name {
+
+        }
+
+        &__info {
+
+        }
+
+        &__source {
+
+        }
+    /* CONTENT END */
+    /* DATA START */
+    &__datas {
+        display: grid;
+        gap: 1.2rem;
+    }
+
+    &__data {
+        border: 1px solid var(--clr-accent);
+        padding: 1.2rem 2.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__data-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: .2rem;
+        color: var(--clr-font--grey);
+        text-transform: uppercase;
+    }
+
+    &__data-value {
+        font-family: var(--font-secondary);
+        font-size: 2rem;
+        text-transform: uppercase;
+
+    }
+    /* DATA END */
+}

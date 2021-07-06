@@ -1,0 +1,31 @@
+.planet-facts {
+
+    &__btns-list {
+        padding: 0 2.4rem;
+        border-bottom: 1px solid var(--clr-accent);
+
+        display: flex;
+        justify-content: space-between;
+
+
+    }
+
+    &__btns-item {
+
+
+    }
+
+    &__btn {
+        padding: 2.4rem 0; 
+        color: var(--clr-font--grey);
+        border-bottom: 4px solid transparent;
+
+        transition: all .4s ease-in-out;
+
+        &.show-planet-facts {
+            color: var(--clr-font--white);
+            border-bottom: 4px solid var(--clr-mercury);
+        }
+
+    }
+}

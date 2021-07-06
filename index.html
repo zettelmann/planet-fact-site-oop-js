@@ -23,7 +23,7 @@
     </header>
 
       <nav class="nav">
-        <ul class="nav__list">
+        <ul>
           <li class="nav__item nav__item--mercury">
             <button class="nav__btn nav__btn--mercury">Mercury</button>
           </li>
@@ -49,45 +49,82 @@
             <button class="nav__btn nav__btn--neptune">Neptune</button>
           </li>
         </ul>
+
       </nav>
-    <div class="container">
-    <section class="section__planet-facts">
-      <div class="planet-facts__container">
+        <nav class="subnav">
+          <ul class="planet-facts__btns-list">
+            <li class="planet-facts__btns-item">
+              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--overview show-planet-facts"><h4>Overview</h4> </button>
+            </li>
+            <li class="planet-facts__btns-item">
+              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--structure"><h4>Structure</h4></button>
+            </li>
+            <li class="planet-facts__btns-item">
+              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--surface"><h4>Surface</h4></button>
+            </li>
+          </ul>
+        </nav>
+      <div class="container">
+        <section class="section-planet-facts">
+          <div class="planet-facts__container">
+            
+
+
         <div class="planet-facts__img">
-            <img class="img" src="./src/svg/planet-mercury.svg" alt="">
+            <img src="../src/svg/planet-mercury.svg" alt="">
         </div>
         <div class="planet-facts__content">
           <h1 class="planet-facts__name">Mercury</h1>
-          <div class="planet-facts__info">
+          <p class="planet-facts__info">
             Mercury is the smallest planet in the Solar System and the closest 
             to the Sun. Its orbit around the Sun takes 87.97 Earth days, the 
             shortest of all the Sun's planets. Mercury is one of four terrestrial 
             planets in the Solar System, and is a rocky body like Earth.
-          </div>
-          <div class="planets-facts__source">Source : Wikipedia</div>
+          </p>
+          <p class="planets-facts__source">Source : Wikipedia</p>
         </div>
+      </div>
+      <div class="planet-facts__datas">
+
+        <div class="planet-facts__data">
+          <p class="planet-facts__data-name">
+            Rotation Time
+          </p>
+          <p class="planet-facts__data-value">
+            58.6 Days
+          </p>
+        </div>
+
+        <div class="planet-facts__data">
+          <p class="planet-facts__data-name">
+            Revolution Time
+          </p>
+          <p class="planet-facts__data-value">
+            87.97 Days
+          </p>
+        </div>
+
+        <div class="planet-facts__data">
+          <p class="planet-facts__data-name">
+            Radius
+          </p>
+          <p class="planet-facts__data-value">
+            2,439.7 KM
+          </p>
+        </div>
+
+        <div class="planet-facts__data">
+          <p class="planet-facts__data-name">
+            Average Temp.
+          </p>
+          <p class="planet-facts__data-value">
+            430°c
+          </p>
+        </div>
+
       </div>
 
     </section>
-
-
-  
-
-  01 Overview
-  02 Internal Structure
-  03 Surface Geology
-
-  Rotation Time
-  58.6 Days
-
-  Revolution Time
-  87.97 Days
-
-  Radius
-  2,439.7 KM
-
-  Average Temp.
-  430°c
 </div>
 </body>
 </html>
