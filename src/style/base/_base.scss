@@ -14,6 +14,8 @@ html {
 }
 
 body {
+    position: relative;
+    
     background: var(--clr-background) url('../svg/background-stars.svg') center;
     color: var(--clr-font--white);
 }
@@ -29,12 +31,24 @@ img {
   height: 11rem;
 
   margin: 9.6rem auto;
+}
 
+a:link,
+a:visited {
+    color: inherit;
+    font-weight: 600;
+
+    &::after {
+        position: absolute;
+        content: url('../svg/icon-source.svg');
+        margin-left: .6rem;
+        transform: translateY(.2rem);
+    }
 }
 
 button {
     background-color: inherit;
-    color: var(--clr-font--white);
+    color: inherit;
     font-family: inherit;
     font-weight: 600;
     text-transform: uppercase;

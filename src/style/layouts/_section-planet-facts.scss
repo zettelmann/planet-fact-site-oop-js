@@ -1,5 +1,5 @@
 .section-planet-facts {
-
+    
 }
 
 .planet-facts {
@@ -19,15 +19,17 @@
     }
 
         &__name {
+            margin-bottom: 2rem;
 
         }
 
         &__info {
-
+            margin-bottom: 4rem;
         }
 
         &__source {
-
+            margin-bottom: 4rem;
+            color: var(--clr-font--grey);
         }
     /* CONTENT END */
     /* DATA START */

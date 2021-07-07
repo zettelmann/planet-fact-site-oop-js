@@ -1,3 +1,5 @@
+@use '../base';
+
 .mobile-menu {
 
     &__button {
@@ -7,6 +9,10 @@
         
         display: grid;
         place-content: center;
+
+        @include base.tablet {
+            display: none;
+        }
     }
 
     &__icon {
