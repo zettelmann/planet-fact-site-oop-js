@@ -20,27 +20,160 @@
         justify-content: space-between;
 
         @include base.tablet {
-           position: relative;
-        }
+            position: relative;
+            top: 0;
 
+
+            display: block;
+            padding: 0;
+
+            
+            grid-column: 2 / -1;
+            grid-row: 2 / span 1;
+
+            border: none;
+        }
     }
 
     &__btns-item {
-
+        @include base.tablet {
+            border: 1px solid var(--clr-accent);
+            margin-bottom: 1.2rem;
+        }
 
     }
 
     &__btn {
         padding: 2.4rem 0; 
+        width: 100%;
+        text-align: left;
+
+
         color: var(--clr-font--grey);
         border-bottom: 4px solid transparent;
 
         transition: all .4s ease-in-out;
 
-        &.show-planet-facts {
+        @include base.tablet {
+            display: flex;
+            align-items: center;
+            padding: 2rem 2.4rem; 
+            letter-spacing: .175rem;
             color: var(--clr-font--white);
-            border-bottom: 4px solid var(--clr-mercury);
+
+            &::before {
+                opacity: .5;
+                padding-right: 2.4rem;
+
+                font-family: var(--font-primary);
+                font-size: 1.1rem;
+            }
+ 
+            &::after {
+                font-family: var(--font-primary);
+                font-size: 1.1rem;
+                padding-left: .6rem;
+
+            }
+
+            &--overview::before {
+                content: '01';
+            }
+
+            &--structure::before {
+                content: '02';
+            }
+
+            &--structure h4::before {
+                content: 'Internal';
+                margin-right: .6rem;
+            }
+
+            &--surface::before {
+                content: '03';
+            }
+
+            &--surface::after {
+                content: 'Geology';
+            }
+
         }
 
+        &.show-planet-facts {
+            color: var(--clr-font--white);
+        }
+        
+        &.planet-facts__btn--mercury.show-planet-facts {
+            border-bottom: 4px solid var(--clr-mercury);
+
+            @include base.tablet {
+                border: 1px solid var(--clr-mercury);
+                background: var(--clr-mercury);
+            }
+        }
+        
+        &.planet-facts__btn--venus.show-planet-facts {
+            border-bottom: 4px solid var(--clr-venus);
+
+            @include base.tablet {
+                border: 1px solid var(--clr-venus);
+                background: var(--clr-venus);
+            }
+        }
+        
+        &.planet-facts__btn--earth.show-planet-facts {
+            border-bottom: 4px solid var(--clr-earth);
+
+            @include base.tablet {
+                border: 1px solid var(--clr-earth);
+                background: var(--clr-earth);
+            }
+        }
+        
+        &.planet-facts__btn--mars.show-planet-facts {
+            border-bottom: 4px solid var(--clr-mars);
+
+            @include base.tablet {
+                border: 1px solid var(--clr-mars);
+                background: var(--clr-mars);
+            }
+        }
+        
+        &.planet-facts__btn--jupiter.show-planet-facts {
+            border-bottom: 4px solid var(--clr-jupiter);
+
+            @include base.tablet {
+                border: 1px solid var(--clr-jupiter);
+                background: var(--clr-jupiter);
+            }
+        }
+        
+        &.planet-facts__btn--saturn.show-planet-facts {
+            border-bottom: 4px solid var(--clr-saturn);
+
+            @include base.tablet {
+                border: 1px solid var(--clr-saturn);
+                background: var(--clr-saturn);
+            }
+        }
+        
+        &.planet-facts__btn--uranus.show-planet-facts {
+            border-bottom: 4px solid var(--clr-uranus);
+
+            @include base.tablet {
+                border: 1px solid var(--clr-uranus);
+                background: var(--clr-uranus);
+            }
+        }
+        
+        &.planet-facts__btn--neptune.show-planet-facts {
+            border-bottom: 4px solid var(--clr-neptune);
+
+            @include base.tablet {
+                border: 1px solid var(--clr-neptune);
+                background: var(--clr-neptune);
+            }
+        }
+        
     }
 }

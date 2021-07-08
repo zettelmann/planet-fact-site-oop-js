@@ -1,64 +1,111 @@
+@use '../base';
+
 .section-planet-facts {
-    
+  display: grid;
+  align-items: center;
+  column-gap: 4.8rem;
+  grid-template-rows: repeat(3, auto);
+
+  @include base.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include base.desktop{
+    grid-template-columns: 2fr 1fr;
+    row-gap: 2.4rem;
+
+  }
+
 }
 
+
 .planet-facts {
+  &__img {
+    width: 100%;
+    display: grid;
+    place-content: center;
 
-    &__container {
+    @include base.tablet {
+      grid-column: 1 / -1;
+      grid-row: 1 / 1;
+
+      img {
+        transform: scale(1.75);
+      }
     }
 
-    
-    &__img {
-        width: 100%;
-        display: grid;
-        place-content: center;
-    }
-    /* CONTENT START */
-    &__content {
-
+    @include base.desktop {
+      img {
+        transform: scale(2.5);
+      }
     }
 
-        &__name {
-            margin-bottom: 2rem;
-
-        }
-
-        &__info {
-            margin-bottom: 4rem;
-        }
-
-        &__source {
-            margin-bottom: 4rem;
-            color: var(--clr-font--grey);
-        }
-    /* CONTENT END */
-    /* DATA START */
-    &__datas {
-        display: grid;
-        gap: 1.2rem;
+    @include base.desktop {
+      grid-column: 1 / 2;
+      grid-row: 1 / span 3;
     }
+  }
+  /* CONTENT START */
+  &__content {
+  }
 
-    &__data {
-        border: 1px solid var(--clr-accent);
-        padding: 1.2rem 2.4rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  &__name {
+    margin-bottom: 2rem;
+  }
 
-    &__data-name {
-        font-size: 1.1rem;
-        font-weight: 600;
-        letter-spacing: .2rem;
-        color: var(--clr-font--grey);
-        text-transform: uppercase;
-    }
+  &__info {
+    margin-bottom: 4rem;
+  }
 
-    &__data-value {
-        font-family: var(--font-secondary);
-        font-size: 2rem;
-        text-transform: uppercase;
+  &__source {
+    margin-bottom: 4rem;
+    color: var(--clr-font--grey);
+
+    @include base.desktop{
+      margin: 0;
 
     }
-    /* DATA END */
+  }
+  /* CONTENT END */
+  /* DATA START */
+  &__datas {
+    display: grid;
+    gap: 1.2rem;
+
+    @include base.tablet {
+      grid-column: 1 / -1;
+      display: flex;
+    }
+  }
+
+  &__data {
+    border: 1px solid var(--clr-accent);
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    @include base.tablet {
+      display: block;
+      text-align: left;
+
+      flex: 1;
+    }
+  }
+
+  &__data-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    color: var(--clr-font--grey);
+    text-transform: uppercase;
+  }
+
+  &__data-value {
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+  /* DATA END */
 }

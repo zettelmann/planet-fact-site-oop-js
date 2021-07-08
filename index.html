@@ -25,28 +25,28 @@
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item nav__item--mercury">
-            <button class="nav__btn nav__btn--mercury">Mercury</button>
+            <button class="nav__btn nav__btn--mercury" data-planet="mercury">Mercury</button>
           </li>
           <li class="nav__item nav__item--venus">
-            <button class="nav__btn nav__btn--venus">Venus</button>
+            <button class="nav__btn nav__btn--venus" data-planet="venus">Venus</button>
           </li>
           <li class="nav__item nav__item--earth">
-            <button class="nav__btn nav__btn--earth">Earth</button>
+            <button class="nav__btn nav__btn--earth" data-planet="earth">Earth</button>
           </li>
           <li class="nav__item nav__item--mars">
-            <button class="nav__btn nav__btn--mars">Mars</button>
+            <button class="nav__btn nav__btn--mars" data-planet="mars">Mars</button>
           </li>
           <li class="nav__item nav__item--jupiter">
-            <button class="nav__btn nav__btn--jupiter">Jupiter</button>
+            <button class="nav__btn nav__btn--jupiter" data-planet="jupiter">Jupiter</button>
           </li>
           <li class="nav__item nav__item--saturn">
-            <button class="nav__btn nav__btn--saturn">Saturn</button>
+            <button class="nav__btn nav__btn--saturn" data-planet="saturn">Saturn</button>
           </li>
           <li class="nav__item nav__item--uranus">
-            <button class="nav__btn nav__btn--uranus">Uranus</button>
+            <button class="nav__btn nav__btn--uranus" data-planet="uranus">Uranus</button>
           </li>
           <li class="nav__item nav__item--neptune">
-            <button class="nav__btn nav__btn--neptune">Neptune</button>
+            <button class="nav__btn nav__btn--neptune" data-planet="neptune">Neptune</button>
           </li>
         </ul>
       </nav>
@@ -69,19 +69,15 @@
 
           <ul class="planet-facts__btns-list">
             <li class="planet-facts__btns-item">
-              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--overview show-planet-facts"><h4>Overview</h4> </button>
+              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--overview show-planet-facts" data-content="overview"><h4>Overview</h4> </button>
             </li>
             <li class="planet-facts__btns-item">
-              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--structure"><h4>Structure</h4></button>
+              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--structure" data-content="structure"><h4>Structure</h4></button>
             </li>
             <li class="planet-facts__btns-item">
-              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--surface"><h4>Surface</h4></button>
+              <button class="planet-facts__btn planet-facts__btn--mercury planet-facts__btn--surface" data-content="surface"><h4>Surface</h4></button>
             </li>
           </ul>
-
-          <div class="planet-facts__container">
-            
-
 
         <div class="planet-facts__img">
             <img src="../src/svg/planet-mercury.svg" alt="">
@@ -96,7 +92,7 @@
           </p>
           <p class="planet-facts__source">Source: <a href="">Wikipedia</a></p>
         </div>
-      </div>
+
       <div class="planet-facts__datas">
 
         <div class="planet-facts__data">
