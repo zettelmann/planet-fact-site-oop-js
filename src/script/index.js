@@ -6,31 +6,37 @@ const navBtnContainer = document.querySelector('.nav__list');
 const mobileMenuNav = document.querySelector('.nav');
 const planetFactsBtn = document.querySelector('.planet-facts__btns-list');
 
+let planetData = 'mercury';
+let content = 'overview';
+let geologyImg = '';
+
+
 navBtnContainer.addEventListener('click', e => {
     const clicked = e.target.closest('.nav__item');
 
     if(!clicked) return;
 
     const [planet] = clicked.children;
-    const planetData = planet.dataset.planet;
+    planetData = planet.dataset.planet;
 
-    showPlanetFacts(planetData);
+    showPlanetFacts(planetData, content);
 
     mobileMenuNav.classList.remove('show-mobile-menu');
 });
 
-planetFactsBtn.addEventListener('click', e => {
+
+planetFactsContainer.addEventListener('click', e => {
     const clicked = e.target.closest('.planet-facts__btn');
     if(!clicked) return;
 
-    const content = clicked.dataset.content;
+    content = clicked.dataset.content;
+    
 
-    console.log(content);
-})
+  showPlanetFacts(planetData, content);
 
+});
 
-
-const showPlanetFacts = async planet => {
+const showPlanetFacts = async (planet,content) => {
     try {
         const res = await fetch(
             '../../data.json'
@@ -39,6 +45,7 @@ const showPlanetFacts = async planet => {
 
         if(!res.ok) throw new Error(`${data.message} (${res.status})`)
 
+        console.log(content, planetData);
 
 
         const [mercury, venus, earth, mars, jupiter, saturn, uranus, neptune] = data;
@@ -52,32 +59,80 @@ const showPlanetFacts = async planet => {
         if(planet === 'uranus') planet = uranus;
         if(planet === 'neptune') planet = neptune;
 
+        const btnShowCondition = content;
+   
+        
+       if(content === 'overview') {
+           content = planet.overview.content;
+
+       }
+       if(content === 'structure') content = planet.structure.content;
+       if(content === 'geology') content = planet.geology.content;
+
+       if(btnShowCondition === 'geology')  geologyImg = `<img src="../src/img/geology-${planetData}.png"/>`
+
+
+
+       let source;
+
+       if(btnShowCondition === 'overview') source = planet.overview.source;
+       if(btnShowCondition === 'structure') source = planet.structure.source;
+       if(btnShowCondition === 'geology') source = planet.geology.source;
+
+
             // Rendering Markup
             const marktup = `
             <ul class="planet-facts__btns-list">
                 <li class="planet-facts__btns-item">
-                    <button class="planet-facts__btn planet-facts__btn--${planet.name.toLowerCase()} 
-                        planet-facts__btn--overview show-planet-facts" data-content="overview">
-                        <h4>Overview</h4> 
+                    <button class="
+                        planet-facts__btn 
+                        planet-facts__btn--${planet.name.toLowerCase()} 
+                        planet-facts__btn--overview ${btnShowCondition === 'overview' ? 'show-planet-facts' : ''}" 
+                        data-content="overview">
+                            <h4>Overview</h4> 
                     </button>
                 </li>
                 <li class="planet-facts__btns-item">
-                <button class="planet-facts__btn planet-facts__btn--${planet.name.toLowerCase()} planet-facts__btn--structure" data-content="structure"><h4>Structure</h4></button>
+                    <button class="
+                        planet-facts__btn 
+                        planet-facts__btn--${planet.name.toLowerCase()} 
+                        planet-facts__btn--structure ${btnShowCondition === 'structure' ? 'show-planet-facts' : ''}" 
+                        data-content="structure">
+                            <h4>Structure</h4>
+                    </button>
                 </li>
                 <li class="planet-facts__btns-item">
-                <button class="planet-facts__btn planet-facts__btn--${planet.name.toLowerCase()} planet-facts__btn--surface" data-content="surface"><h4>Surface</h4></button>
+                    <button class="
+                        planet-facts__btn 
+                        planet-facts__btn--${planet.name.toLowerCase()} 
+                        planet-facts__btn--surface ${btnShowCondition === 'geology' ? 'show-planet-facts' : ''}" 
+                        data-content="geology">
+                            <h4>Surface</h4>
+                    </button>
                 </li>
             </ul>
 
         <div class="planet-facts__img">
-            <img src="${planet.images.planet}" alt="${planet.name}">
+  
+ 
+              <img 
+                src="
+                  ${btnShowCondition === 'overview'  ? planet.images.planet : ''}
+                  ${btnShowCondition === 'structure' ? planet.images.internal : ''}
+                  ${btnShowCondition === 'geology' ? planet.images.planet  : ''}
+                " 
+                alt="${planet.name}"
+              >
+              ${btnShowCondition === 'geology' ? geologyImg : ''}
+
+
         </div>
         <div class="planet-facts__content">
           <h1 class="planet-facts__name">${planet.name}</h1>
           <p class="planet-facts__info">
-            ${planet.overview.content}
+            ${content}
           </p>
-          <p class="planet-facts__source">Source: <a href="${planet.overview.source}">Wikipedia</a></p>
+          <p class="planet-facts__source">Source: <a href="${source}" target="_blank">Wikipedia</a></p>
         </div>
 
       <div class="planet-facts__datas">
@@ -127,7 +182,7 @@ const showPlanetFacts = async planet => {
        // alert(err)
     }
 }
-
+showPlanetFacts(planetData, content);
 
 
 

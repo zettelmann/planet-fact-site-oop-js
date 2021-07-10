@@ -29,6 +29,8 @@ mobileSubNavContainer.addEventListener('click', e => {
         .forEach(btn => btn.classList.remove('show-planet-facts'));
 
     clicked.classList.add('show-planet-facts');
+
+    
 });
 
 

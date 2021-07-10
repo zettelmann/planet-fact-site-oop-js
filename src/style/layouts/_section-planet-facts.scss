@@ -4,13 +4,14 @@
   display: grid;
   align-items: center;
   column-gap: 4.8rem;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: 1fr auto auto;
 
   @include base.tablet {
     grid-template-columns: repeat(2, 1fr);
   }
 
   @include base.desktop{
+    grid-template-rows: repeat(3, auto);
     grid-template-columns: 2fr 1fr;
     row-gap: 2.4rem;
 
@@ -21,40 +22,84 @@
 
 .planet-facts {
   &__img {
+    position: relative;
+
     width: 100%;
+    min-height: 25rem;
+
+    margin: 8.4rem auto 2.4rem ;
     display: grid;
-    place-content: center;
+    justify-content: center;
+
+    img {
+      align-self: center;
+      margin: 0 auto;
+      width: 50%;
+
+      & + img {
+        position: absolute;
+        width: 7rem;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 70%;
+
+
+      }
+    }
 
     @include base.tablet {
+      margin: auto;
+
+      height: 45rem;
+
       grid-column: 1 / -1;
-      grid-row: 1 / 1;
 
       img {
-        transform: scale(1.75);
+        transform: scale(1.5);
+        align-self: center;
       }
-    }
 
-    @include base.desktop {
-      img {
-        transform: scale(2.5);
-      }
     }
-
     @include base.desktop {
       grid-column: 1 / 2;
       grid-row: 1 / span 3;
+
+      img {
+        transform: scale(2);
     }
+
+    }
+
   }
   /* CONTENT START */
   &__content {
   }
 
   &__name {
+    text-align: center;
+
+    @include base.tablet {
+      text-align: left;
+    }
+
     margin-bottom: 2rem;
   }
 
   &__info {
+    font-size: 1.5rem;
+    text-align: center;
+
     margin-bottom: 4rem;
+
+    @include base.tablet {
+      height: 15.5rem;
+      text-align: left;
+    }
+    
+    @include base.desktop {
+      height: 17.5rem;
+    }
   }
 
   &__source {
