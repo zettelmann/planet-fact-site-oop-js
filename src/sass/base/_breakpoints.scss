@@ -1,7 +1,7 @@
-
-
-$screen-tablet: 768px;
-$screen-desktop: 76.8em;
+// Breakpoint tablet: 768px / 1.6 = 48em;
+$screen-tablet: 48em;
+// Breakpoint tablet: 1440px / 1.6 = 90em;
+$screen-desktop: 90em;
 
 @mixin tablet {
     @media (min-width: #{$screen-tablet}) {

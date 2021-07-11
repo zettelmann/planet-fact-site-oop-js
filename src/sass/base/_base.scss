@@ -1,10 +1,11 @@
-
+* {
+    margin: 0;
+    padding: 0;
+}
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
     box-sizing: inherit;
 }
 
@@ -22,12 +23,6 @@ body {
 
 li {
     list-style: none;
-}
-
-img {
-  //max-width: 100%;
-
-  //margin: 9.6rem auto;
 }
 
 a:link,
@@ -50,8 +45,6 @@ button {
     font-weight: 600;
     text-transform: uppercase;
     border: inherit;
-
-
 }
 
 

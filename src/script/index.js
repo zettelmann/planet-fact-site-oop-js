@@ -1,10 +1,11 @@
-import '../style/main.scss';
+import '../sass/main.scss';
 import './mobileMenu';
 
 const planetFactsContainer = document.querySelector('.section-planet-facts');
 const navBtnContainer = document.querySelector('.nav__list');
 const mobileMenuNav = document.querySelector('.nav');
-const planetFactsBtn = document.querySelector('.planet-facts__btns-list');
+const mobileMenuBtn = document.querySelector('.mobile-menu__button');
+
 
 let planetData = 'mercury';
 let content = 'overview';
@@ -26,7 +27,7 @@ navBtnContainer.addEventListener('click', e => {
 
 
 planetFactsContainer.addEventListener('click', e => {
-    const clicked = e.target.closest('.planet-facts__btn');
+    const clicked = e.target.closest('.planet-facts__tab-btn');
     if(!clicked) return;
 
     content = clicked.dataset.content;
@@ -82,35 +83,35 @@ const showPlanetFacts = async (planet,content) => {
 
             // Rendering Markup
             const marktup = `
-            <ul class="planet-facts__btns-list">
-                <li class="planet-facts__btns-item">
+            <div class="planet-facts__tab-container">
+                <div class="planet-facts__tab">
                     <button class="
-                        planet-facts__btn 
-                        planet-facts__btn--${planet.name.toLowerCase()} 
-                        planet-facts__btn--overview ${btnShowCondition === 'overview' ? 'show-planet-facts' : ''}" 
+                        planet-facts__tab-btn 
+                        planet-facts__tab-btn--${planet.name.toLowerCase()} 
+                        planet-facts__tab-btn--overview ${btnShowCondition === 'overview' ? 'show-planet-facts' : ''}" 
                         data-content="overview">
                             <h4>Overview</h4> 
                     </button>
-                </li>
-                <li class="planet-facts__btns-item">
+                </div>
+                <div class="planet-facts__tab">
                     <button class="
-                        planet-facts__btn 
-                        planet-facts__btn--${planet.name.toLowerCase()} 
-                        planet-facts__btn--structure ${btnShowCondition === 'structure' ? 'show-planet-facts' : ''}" 
+                        planet-facts__tab-btn 
+                        planet-facts__tab-btn--${planet.name.toLowerCase()} 
+                        planet-facts__tab-btn--structure ${btnShowCondition === 'structure' ? 'show-planet-facts' : ''}" 
                         data-content="structure">
                             <h4>Structure</h4>
                     </button>
-                </li>
-                <li class="planet-facts__btns-item">
+                </div>
+                <div class="planet-facts__tab">
                     <button class="
-                        planet-facts__btn 
-                        planet-facts__btn--${planet.name.toLowerCase()} 
-                        planet-facts__btn--surface ${btnShowCondition === 'geology' ? 'show-planet-facts' : ''}" 
+                        planet-facts__tab-btn 
+                        planet-facts__tab-btn--${planet.name.toLowerCase()} 
+                        planet-facts__tab-btn--surface ${btnShowCondition === 'geology' ? 'show-planet-facts' : ''}" 
                         data-content="geology">
                             <h4>Surface</h4>
                     </button>
-                </li>
-            </ul>
+                </div>
+            </div>
 
         <div class="planet-facts__img">
   
@@ -178,9 +179,12 @@ const showPlanetFacts = async (planet,content) => {
         planetFactsContainer.innerHTML ='';
         planetFactsContainer.insertAdjacentHTML('afterbegin', marktup);
 
+
     } catch(err) {
        // alert(err)
     }
+    mobileMenuBtn.classList.remove('close-button');
+
 }
 showPlanetFacts(planetData, content);
 

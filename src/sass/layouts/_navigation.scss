@@ -16,7 +16,6 @@
     &.show-mobile-menu {
         background: var(--clr-background);
         transform: translateX(0);
-
     }
 
     @include base.tablet {
@@ -27,13 +26,9 @@
         background: none;
     }
 
-    
     @include base.desktop {
         padding: 0;
-
     }
-
-
 
     &__list {
         @include base.tablet {
@@ -47,14 +42,12 @@
         }
     }
 
-    
     &__item {
         &:not(:last-child) {
             border-bottom: 1px solid var(--clr-accent); 
 
             @include base.tablet {
                 border-bottom: none;
-
             }
         }
     }
@@ -72,7 +65,7 @@
         &::before {
             content: '';
             width: 2.4rem;
-            height: 2.4rem;
+            aspect-ratio: 1 / 1;
             margin-right: 2rem;
             border-radius: 50%;
 
@@ -81,19 +74,19 @@
             }
         }
 
-        &--mercury::before { background-color: var(--clr-mercury); }
-        &--venus::before { background-color: var(--clr-venus); }
-        &--earth::before { background-color: var(--clr-earth); }
-        &--mars::before { background-color: var(--clr-mars); }
-        &--jupiter::before { background-color: var(--clr-jupiter); }
-        &--saturn::before { background-color: var(--clr-saturn); }
-        &--uranus::before { background-color: var(--clr-uranus); }
-        &--neptune::before { background-color: var(--clr-neptune); }
+        &--mercury::before { @include base.displayPlanetColorNavMobile(var(--clr-mercury)); }
+        &--venus::before { @include base.displayPlanetColorNavMobile(var(--clr-venus)); }
+        &--earth::before { @include base.displayPlanetColorNavMobile(var(--clr-earth)); }
+        &--mars::before { @include base.displayPlanetColorNavMobile(var(--clr-mars)); }
+        &--jupiter::before { @include base.displayPlanetColorNavMobile(var(--clr-jupiter)); }
+        &--saturn::before { @include base.displayPlanetColorNavMobile(var(--clr-saturn)); }
+        &--uranus::before { @include base.displayPlanetColorNavMobile(var(--clr-uranus)); }
+        &--neptune::before { @include base.displayPlanetColorNavMobile(var(--clr-neptune)); }
 
         &::after {
             content: '';
             width: 2.4rem;
-            height: 2.4rem;
+            aspect-ratio: 1 / 1;
             margin-left: auto;
             background: url('../svg/icon-chevron.svg') no-repeat center;
             transform: scale(2.4);
@@ -103,7 +96,6 @@
             }
         }
 
-        
     @include base.desktop {
         padding: 4.8rem 0;
 
@@ -111,19 +103,18 @@
             color: var(--clr-font--white);
         }
 
-        &--mercury:hover { border-top: 4px solid var(--clr-mercury); }
-        &--venus:hover { border-top: 4px solid var(--clr-venus); }
-        &--earth:hover { border-top: 4px solid var(--clr-earth); }
-        &--mars:hover { border-top: 4px solid var(--clr-mars); }
-        &--jupiter:hover { border-top: 4px solid var(--clr-jupiter); }
-        &--saturn:hover { border-top: 4px solid var(--clr-saturn); }
-        &--uranus:hover { border-top: 4px solid var(--clr-uranus); }
-        &--neptune:hover { border-top: 4px solid var(--clr-neptune); }
+        &--mercury:hover { @include base.displayPlanetColorNavDesktop(var(--clr-mercury)); }
+        &--venus:hover { @include base.displayPlanetColorNavDesktop(var(--clr-venus)); }
+        &--earth:hover { @include base.displayPlanetColorNavDesktop(var(--clr-earth)); }
+        &--mars:hover { @include base.displayPlanetColorNavDesktop(var(--clr-mars)); }
+        &--jupiter:hover { @include base.displayPlanetColorNavDesktop(var(--clr-jupiter)); }
+        &--saturn:hover { @include base.displayPlanetColorNavDesktop(var(--clr-saturn)); }
+        &--uranus:hover { @include base.displayPlanetColorNavDesktop(var(--clr-uranus)); }
+        &--neptune:hover { @include base.displayPlanetColorNavDesktop(var(--clr-neptune)); }
     }
 
         &.active {
             color: var(--clr-font--white);
         }
     }
-
 }

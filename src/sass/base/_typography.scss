@@ -1,8 +1,6 @@
 :root {
     --font-primary: 'Spartan', sans-serif;
     --font-secondary: 'Antonio', sans-serif;
-
-    
 }
 
 html {
@@ -20,18 +18,17 @@ h1 {
     font-family: var(--font-secondary);
     font-weight: 400;
     text-transform: uppercase ;  
-    font-size: 4rem;
+    font-size: clamp(4rem, 5vw, 8rem);
  }
 
 h4 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: .175rem;
 }
 
 p {
-    font-size: 1.4rem;
-   // padding-bottom: 3.6rem;
-
-
+    font-size: clamp(1.4rem, 1.25vw, 1.6rem);
+    max-width: 50ch;
 }
+

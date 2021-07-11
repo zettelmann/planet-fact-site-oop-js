@@ -1,0 +1,24 @@
+@use 'breakpoints';
+
+:root {
+  --border: 4px solid;
+}
+
+// Mixin for tabs-planet-facts
+@mixin displayPlanetColorTab($planetColor) {
+  border-bottom: var(--border) $planetColor;
+  @include breakpoints.tablet {
+    border: 1px solid $planetColor;
+    background: $planetColor;
+  }
+}
+
+// Mixin for navigation mobile
+@mixin displayPlanetColorNavMobile($planetColor) {
+  background: ($planetColor);
+}
+
+// Mixin for navigation desktop
+@mixin displayPlanetColorNavDesktop($planetColor) {
+  border-top: var(--border) ($planetColor);
+}

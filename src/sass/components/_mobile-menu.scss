@@ -22,6 +22,8 @@
         
         position: relative;
 
+        transition: all .4s ease-in-out;
+
         &:before {
             content: '';
             width: inherit;
@@ -31,7 +33,10 @@
             position: absolute;
             top: -.7rem;
             left: 0;
+
+            transition: inherit;
         }
+        
         &:after {
             content: '';
             width: inherit;
@@ -41,8 +46,23 @@
             top: .7rem;
             left: 0;
             position: absolute;
+
+            transition: inherit;
         }
     }
+}
 
+.close-button .mobile-menu__icon {
+    transform: translateX(-2.4rem);
+    background: transparent;
+}
 
+.close-button .mobile-menu__icon::before {
+    transform: rotate(135deg) translate(-12px, -22px);
+    background: var(--clr-font--white);
+}
+
+.close-button .mobile-menu__icon::after {
+    transform: rotate(-135deg) translate(-12px, 22px);
+    background: var(--clr-font--white);
 }

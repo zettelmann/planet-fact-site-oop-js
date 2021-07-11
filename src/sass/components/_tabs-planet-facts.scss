@@ -1,0 +1,126 @@
+@use '../base';
+/* 
+    PLANET FACTS SUB-MENU MOBILE
+*/
+.planet-facts {
+
+    &__tab-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 9.6rem;
+
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2.4rem;
+        border-bottom: 1px solid var(--clr-accent);
+
+        display: flex;
+        justify-content: space-between;
+
+        @include base.tablet {
+            position: relative;
+            top: 0;
+            padding: 0;
+            border: none;
+
+            display: block;
+            grid-column: 2 / -1;
+            grid-row: 2 / span 1;
+        }
+    }
+
+    &__tab {
+        @include base.tablet {
+            border: 1px solid var(--clr-accent);
+            margin-bottom: 1.2rem;
+        }
+
+    }
+
+    &__tab-btn {
+        padding: 2.4rem 0; 
+        width: 100%;
+        text-align: left;
+
+
+        color: var(--clr-font--grey);
+        border-bottom: 4px solid transparent;
+
+        transition: all .4s ease-in-out;
+
+        @include base.tablet {
+            display: flex;
+            align-items: center;
+            padding: 2rem 2.4rem; 
+            letter-spacing: .175rem;
+            color: var(--clr-font--white);
+
+            &::before {
+                opacity: .5;
+                padding-right: 2.4rem;
+
+                font-family: inherit;
+                font-size: inherit;
+            }
+ 
+            &::after {
+                font-family: inherit;
+                font-size: inherit;
+                padding-left: .6rem;
+
+            }
+
+            &--overview::before { content: '01'; }
+
+            &--structure::before {  content: '02'; }
+
+            &--structure h4::before {
+                content: 'Internal';
+                margin-right: .6rem;
+            }
+
+            &--surface::before { content: '03'; }
+
+            &--surface::after { content: 'Geology'; }
+
+        }
+
+        &.show-planet-facts {
+            color: var(--clr-font--white);
+        }
+        
+        &.planet-facts__tab-btn--mercury.show-planet-facts {
+            @include base.displayPlanetColorTab(var(--clr-mercury));
+        }
+        
+        &.planet-facts__tab-btn--venus.show-planet-facts {
+            @include base.displayPlanetColorTab(var(--clr-venus));
+        }
+        
+        &.planet-facts__tab-btn--earth.show-planet-facts {
+            @include base.displayPlanetColorTab(var(--clr-earth));
+        }
+        
+        &.planet-facts__tab-btn--mars.show-planet-facts {
+            @include base.displayPlanetColorTab(var(--clr-mars));
+        }
+        
+        &.planet-facts__tab-btn--jupiter.show-planet-facts {
+            @include base.displayPlanetColorTab(var(--clr-jupiter));
+        }
+        
+        &.planet-facts__tab-btn--saturn.show-planet-facts {
+            @include base.displayPlanetColorTab(var(--clr-saturn));
+        }
+        
+        &.planet-facts__tab-btn--uranus.show-planet-facts {
+            @include base.displayPlanetColorTab(var(--clr-uranus));
+        }
+        
+        &.planet-facts__tab-btn--neptune.show-planet-facts {
+            @include base.displayPlanetColorTab(var(--clr-neptune));
+        }
+        
+    }
+}
