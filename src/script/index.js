@@ -16,9 +16,9 @@ class App {
   constructor() {
     this.#loadPlanetData();
 
-    this.#toggleMobileNav();
-    this.#getPlanetName();
-    this.#getPlanetContent();
+    navBtnContainer.addEventListener("click", this.#getPlanetName.bind(this));
+    planetFactsContainer.addEventListener("click", this.#getPlanetContent.bind(this));
+    mobileMenuBtn.addEventListener("click", this.#toggleMobileNav.bind(this));
   }
 
   async #loadPlanetData() {
@@ -29,12 +29,11 @@ class App {
 
       this.#renderPlanet(this.#planetName, this.#planetContent);
     } catch (err) {
-      alert(err);
+      console.error(err);
     }
   }
 
-  #getPlanetName() {
-    navBtnContainer.addEventListener("click", (e) => {
+  #getPlanetName(e) {
       const clicked = e.target.closest(".nav__item");
       if (!clicked) return;
 
@@ -43,28 +42,18 @@ class App {
       this.#planetName = this.data;
 
       this.#renderPlanet(this.#planetName, this.#planetContent);
-
-      if(mobileMenuNav.classList.contains('show-mobile-menu')) this.closeMobileMenu();
-    });
+      this.#toggleMobileNav();
   }
 
-  #getPlanetContent() {
-    planetFactsContainer.addEventListener("click", (e) => {
+  #getPlanetContent(e) {
       const clicked = e.target.closest(".planet-facts__tab-btn");
       if (!clicked) return;
 
       this.#planetContent = clicked.dataset.content;
-      console.log(this.#planetContent);
-
       this.#renderPlanet(this.#planetName, this.#planetContent);
-    });
   }
 
   #toggleMobileNav() {
-    mobileMenuBtn.addEventListener("click", this.closeMobileMenu);
-  }
-
-  closeMobileMenu() {
     mobileMenuNav.classList.toggle("show-mobile-menu");
     mobileMenuBtn.classList.toggle("close-button");
   }
@@ -99,9 +88,7 @@ class App {
     console.log(...btn);
  */
 
-    
-
-
+  
     const marktup = `
               <div class="planet-facts__tab-container">
                   <div class="planet-facts__tab">
@@ -228,3 +215,5 @@ class App {
 }
 
 const app = new App();
+
+
