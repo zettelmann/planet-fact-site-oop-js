@@ -10,6 +10,7 @@
     align-items: center;
     border-bottom: 1px solid var(--clr-accent);
 
+
     @include base.tablet {
         display: block;
         padding: 2.4rem 2.4rem 0 2.4rem;
@@ -17,9 +18,28 @@
     }
 
     @include base.desktop {
+        position: relative;
+
         display: flex;
         padding: 0 4.2rem;
         text-align: center;
+
+        border-bottom: none;
+
+        &::after {
+            overflow:visible;
+            position: absolute;
+            content: '';
+            height: 1px;
+            bottom: 0;
+
+            width: 100vw;
+            left: 50%;
+            transform:translate(-50%);
+
+            background: var(--clr-accent);
+        }
+         
     }
 
     &__logo {

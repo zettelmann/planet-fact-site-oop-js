@@ -14,7 +14,6 @@
     grid-template-rows: repeat(3, auto);
     grid-template-columns: 2fr 1fr;
     row-gap: 2.4rem;
-
   }
 
 }
@@ -96,7 +95,7 @@
     }
     
     @include base.desktop {
-      height: 17.5rem;
+      height: 19.5rem;
     }
   }
 
@@ -130,7 +129,8 @@
     text-align: center;
 
     @include base.tablet {
-      display: block;
+      flex-direction: column;
+      align-items: flex-start;
       text-align: left;
 
       flex: 1 0;
@@ -142,12 +142,13 @@
     letter-spacing: 0.2rem;
     color: var(--clr-font--grey);
     text-transform: uppercase;
-  }
+ }
 
   &__data-value {
     font-family: var(--font-secondary);
     font-size: 2rem;
     text-transform: uppercase;
+
   }
   /* DATA END */
 }
