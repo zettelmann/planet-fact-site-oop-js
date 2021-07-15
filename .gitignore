@@ -17,6 +17,3 @@
 
 # Dependency directories
 node_modules/
-
-# generate output
-dist
