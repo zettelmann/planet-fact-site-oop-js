@@ -71,9 +71,7 @@
     }
 
   }
-  /* CONTENT START */
-  &__content {
-  }
+
 
   &__name {
     text-align: center;
@@ -100,12 +98,16 @@
   }
 
   &__source {
+
     margin-bottom: 4rem;
     color: var(--clr-font--grey);
+    text-align: center;
 
+    @include base.tablet{
+      text-align: left;
+    }
     @include base.desktop{
       margin: 0;
-
     }
   }
   /* CONTENT END */

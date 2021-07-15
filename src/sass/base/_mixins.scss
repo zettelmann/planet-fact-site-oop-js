@@ -22,3 +22,7 @@
 @mixin displayPlanetColorNavDesktop($planetColor) {
   border-top: var(--border) ($planetColor);
 }
+
+@mixin displayActivePlanet($planetColor) {
+  background: rgba($planetColor, 0.5)
+}

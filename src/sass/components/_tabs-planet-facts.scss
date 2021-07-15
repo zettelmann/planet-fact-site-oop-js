@@ -39,6 +39,7 @@
     }
 
     &__tab-btn {
+        cursor: pointer;
         padding: 2.4rem 0; 
         width: 100%;
         text-align: left;
@@ -49,12 +50,18 @@
 
         transition: all .4s ease-in-out;
 
+
+
         @include base.tablet {
             display: flex;
             align-items: center;
             padding: 2rem 2.4rem; 
             letter-spacing: .175rem;
             color: var(--clr-font--white);
+
+            &:hover {
+                background: var(--clr-font--hover);
+            }
 
             &::before {
                 opacity: .5;
