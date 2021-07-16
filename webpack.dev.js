@@ -1,11 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const common = require('./webpack.common.js');
-const { merge } = require('webpack-merge');
+const common = require("./webpack.common.js");
+const { merge } = require("webpack-merge");
 
-
-module.exports =merge(common, {
+module.exports = merge(common, {
   mode: "development",
+  target: "web",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
@@ -14,7 +14,7 @@ module.exports =merge(common, {
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
-  },  
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
