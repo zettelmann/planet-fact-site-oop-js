@@ -8,7 +8,7 @@ module.exports = merge(common, {
   target: "web",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname),
     clean: true,
   },
   devtool: "inline-source-map",
