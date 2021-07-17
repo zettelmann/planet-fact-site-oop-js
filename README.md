@@ -60,7 +60,7 @@ git clone https://github.com/zettelmann/planet-fact-site-oop-js.git
 
 2. Install NPM packages
 ```
-npm install
+npm i
 ```
 
 3. Start development mode
