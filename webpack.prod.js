@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = merge(common, {
   mode: "production",
   output: {
-    filename: "main.[contenthash].js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -19,6 +19,7 @@ module.exports = merge(common, {
       new OptimizeCssAssetsPlugin(),
       new TerserPlugin(),
       new HtmlWebpackPlugin({
+        template: "./src/index.html",
         minify: {
           removeAttributeQuotes: true,
           collapseWhitespace: true,
@@ -27,11 +28,8 @@ module.exports = merge(common, {
       }),
     ],
   },
-  
+
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-    }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
     }),
@@ -40,7 +38,12 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
     ],
   },
