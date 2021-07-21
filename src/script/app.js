@@ -2,7 +2,8 @@
 import "../sass/main.scss";
 import Data from '../data.json'
 import { Planet } from './planet';
-
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 // DOM elements
 const planetFactsContainer = document.querySelector(".section-planet-facts");
