@@ -8,7 +8,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - View each planet page and toggle between "Overview", "Internal Structure", and "Surface Geology"
 
-[&rarr; Here you can try the hosted solution](https://condescending-hermann-37d9b6.netlify.app/).
+### [&rarr; Here you can try the hosted solution](https://condescending-hermann-37d9b6.netlify.app/).
 
 ## Planning Process
 
